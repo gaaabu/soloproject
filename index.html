@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONIKA</title>
+    <link rel="icon" type="image/x-icon" href="assets/cat.webp">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = "container">
+        <div class="top-section">
+            <img src="assets/gifcat.gif" alt="GifCat" class="gif1">
+            <div class="text1">
+                pwidi ka b mging ji ef
+            </div>
+            <button class="valentine-btn" onclick="openModal()">Open My Valentine's Message 💌</button>
+            <div id="valentineModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Hilu malibug na nigga</h2>
+                    <p>Happy Valentines day baby</p>
+                    <p> di ko na change font at bg color masakit s mata pag iba eh. HILO BABY HAPPY VALENTINES DAYY, kamusta ka malibog ka parin ba HSAHSAHSAHSAHSHA juk lang! seryoso na, so thankful ako na ikaw ay dumating sa buhay ko. Araw araw mong pinaparamdam sakin
+                        na u love me, and ofc araw araw ko rin paparamdam yon. alam ku nag aaway tayo minsan (once a month) pero wag mo isipin na dahil lang don is aayawan kita or what. Yung mga pag aaway natin yung magpapatibay
+                         ng relasyon natin (prang titi ko). You'll always be my sobrang ganda na babynigga, sobrang ganda mo nagbago standards ko na kung hindi si monika WAG N LAGN!!! wg ka magbabagu huhu mbtc. iloveyousomuch 
+                         bibigay ko sayo c2 na red koh HWAHSAHSAHASHASHSAHSHASHA. MAS MASARAP GAGAWIN NI GBRIEL SAU MAGATIRIK MATA MU. ILOVEYOUSM ALWAYS MY BABY. BTW BABY PINDUTIN MO LANG YUNG GABOT PAG GUSTO MO KO KAUSAPIN PERO AKO AY BUSY.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="btm-section">
+            <div class="btn-container">
+                <button class="btn-yes" id="yesBtn">YES</button>
+
+                <button class="btn-no" id="customBtn">NO</button>
+                
+                <button class="btn-chat" id="chatBtn">GABOT</button>
+            </div>
+            
+        </div>
+
+        
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    document.getElementById("yesBtn").addEventListener("click", function() {
+        window.location.href = "page2.html";
+    });
+    document.getElementById("chatBtn").addEventListener("click", function() {
+        window.location.href = "chatbot.html";
+    });
+    function openModal() {
+        document.getElementById("valentineModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("valentineModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById("valentineModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    const b = document.querySelector('button.btn-no')
+    b.addEventListener("mouseover",moveHover)
+
+    function moveHover(){
+        const i = Math.floor(Math.random()*500)+1;
+        const j = Math.floor(Math.random()*500)+1;
+
+        b.style.left=i+"px"
+        b.style.top=j+"px"
+    }
+</script>

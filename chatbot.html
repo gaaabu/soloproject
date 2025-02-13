@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot for My Love</title>
+    <link rel="icon" type="image/x-icon" href="assets/cat.webp">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="title-container">
+            <h2 class="text1">GaBot ni Munika</h2>
+        </div>
+        <div class="bottom-container">
+            <div class="chat-container" id="chatbox"></div>
+            <div class="btn-txt-container">
+                <input type="text" id="userInput" class="chat-input" placeholder="Type a message...">
+                <button onclick="sendMessage()" class="chat-button">Send</button>
+            </div>
+            <button class="btn-yes" id="homeBtn">Home</button>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById("homeBtn").addEventListener("click", function() {
+        window.location.href = "index.html";
+        });
+        function sendMessage() {
+            let input = document.getElementById("userInput").value.toLowerCase();
+            let chatbox = document.getElementById("chatbox");
+    
+            let userMessage = `<p><strong>You:</strong> ${input}</p>`;
+            chatbox.innerHTML += userMessage;
+    
+            let botReply = getBotReply(input);
+            let botMessage = `<p><strong>Bot:</strong> ${botReply}</p>`;
+            chatbox.innerHTML += botMessage;
+    
+            document.getElementById("userInput").value = "";
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    
+        function getBotReply(input) {
+            let responses = {
+                "hello": [
+                    "wassup anu balak ntin ngayon",
+                    "hi babyy",
+                    "munica ng, anu yun",
+                    "FUCK ME IN THE ASSHOLE"
+                ],
+                "sad": [
+                    "ANYARE BABY CNO UMAWAY",
+                    "I LOVE YOU SO MUCH MY BABYY CHEER UP ANDITO LANG AKO ALWAYS FOR U",
+                    "tadtarin q ikaw kiss baby",
+                    "kwento mo lang baby",
+                    "SENDING VIRTUAL HUGS MY NIGGA"
+                ],
+                "happy": [
+                    "YIPIEEE MY BABY HAPPY",
+                    "tingin nga smile gnda gnda eh",
+                    "ANYARE ANU NAGPASAYA",
+                ],
+                "love": [
+                    "I LOVE YOU TOO BABY",
+                    "I LOVEYOU MORE BABYY",
+                    "I LOVE YOU MOSTEST",
+                    "mz mhal kita noh",
+                ],
+                "horny": [
+                    "WOAH BAKIT LIBUG",
+                    "tra six",
+                    "MUNIKA MALIBUG",
+                    "kntotin kita eh!!!",
+                    "NAPAKABASTOS"
+                ],
+                "angry": [
+                    "bakit ka galit sino gumalit",
+                    "PUTANGINA MO TABACHOY (eto ay pansamantala lng dahil nagpapainit ng dugo mo si kelsey)",
+                    "awayin ko rin yan anyare",
+                    "prang titi ko sayo galit, anyare bakit ikw galit",
+                ],
+                "insecure": [
+                    "ANONG HINDI KA MAGANDA GANDA GANDA MO NGA",
+                    "tunaw na tunaw ka sakin pag tinititigan ko napakaganda ba naman",
+                    "sa subrang ganda mo pagsalsalan kita WOAHHH",
+                    "iloveyousmm babyy ikaw pinakamaganda sa mata ko",
+                    "ikaw ang definition ng ganda para sakin"
+                ],
+                "nigga": [
+                    "wassup nigga",
+                    "Racism is not a funny thing, please avoid saying racist things",
+                    "chingchong",
+                    "si dane nigga"
+                ],
+                "red": [
+                    "ayaw ko ng lasa ng c2 na kulay green",
+                    "ayos lang naman yung lasa ng c2 na yellow",
+                    "nung tinikman ko yung green yoko na ulitin",
+                    "pagbibili ako alam ko na sasabihin",
+                    "gusto kong red na c2 sakin, sakin ibigay"
+                ],
+                "ferdinand": [
+                    "di nmn msarap gnagwa ni ferdinand sau",
+                    "di nmn nagatirik ang mata",
+                    "bkt d ka nagpulbu",
+                    "himud himurin ko pa sana yan ay"
+                ]
+                
+            };
+    
+            for (let keyword in responses) {
+                if (input.includes(keyword)) {
+                    let randomIndex = Math.floor(Math.random() * responses[keyword].length);
+                    return responses[keyword][randomIndex];
+                }
+            }
+    
+            return "ANU PA YAN  CHIKAHAN MU KU";
+        }
+    </script>
+</body>
+</html>
